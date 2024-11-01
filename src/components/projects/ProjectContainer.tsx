@@ -1,4 +1,4 @@
-import webd from "../../assets/service-wevd-img.png";
+import rbfImg from "../../assets/project-rbf-img.png";
 import ProjectCard from './ProjectCard';
 
 const ProjectContainer = () => (
@@ -14,7 +14,7 @@ const ProjectContainer = () => (
             title="RBF Industries"
             description="Based in Hyderabad, this company supplies sustainable biomass briquettes for industrial fuel needs. Their eco-friendly biofuel solutions offer factories a cleaner, more efficient energy source, helping to reduce carbon footprints. Known for high-quality biomass briquettes, they are dedicated to supporting a sustainable future through reliable, environmentally conscious energy options."
             // icon={<Code size={24} />}
-            img={webd}
+            img={rbfImg}
             link="rbfindustries.in"
           />
           {/* <ProjectCard
