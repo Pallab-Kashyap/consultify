@@ -1,5 +1,6 @@
 import { BarChart, Code } from "lucide-react";
-import webd from "../../assets/service-wevd-img.png";
+import webd from "../../assets/service-wevd-img.png"; 
+import dm from "../../assets/service-digital-img.png"; 
 import ServiceCard from './ServiceCard';
 
 const ServiceContainer = () => (
@@ -21,7 +22,7 @@ const ServiceContainer = () => (
             title="Digital Marketing"
             description="Digital Marketing Strategy that helps you reach your target audience and achieve your business goals through data-driven approaches."
             icon={<BarChart size={24} />}
-            img={webd}
+            img={dm}
           />
         </div>
       </div>

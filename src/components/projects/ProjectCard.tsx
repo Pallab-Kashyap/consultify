@@ -21,7 +21,7 @@ const ProjectCard = ({
       </a>
     </div>
     <div>
-      <img src={img} alt="" className="h-72" />
+      <img src={img} alt="" className="h-72 rounded-3xl" />
     </div>
   </div>
 );
