@@ -1,16 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import sendMail, { ContactData } from '../../utils/SendMail';
 import FormInput from './FormInput';
 import contactImg from "../../assets/contact-us-img.png";
+import loadAnimation from "../../assets/mailLoadingAnimation.gif"
 
 const ContactForm = () => {
     const [name, setName] = useState('')
     const [email, setEmail]= useState('')
     const [message, setMessage]=useState('')
     const [phone, setPhone] = useState('')
+    const [mailState, setMailState] = useState(false)
+    const [popUp, setPopUp] = useState(false)
+    const [popUpMsg, setPopUpMsg] = useState(false)
   
     const handleClick = async (e: React.MouseEvent) => {
       e.preventDefault()
+      setMailState(true)
       const data: ContactData = {
         name : name,
         email : email,
@@ -19,8 +24,20 @@ const ContactForm = () => {
       }
   
       const res = await sendMail(data)
-  console.log(res);
+      setPopUp(true)
+      setPopUpMsg(res)
+      setMailState(false)
+      setName('')
+      setEmail('')
+      setPhone('')
+      setMessage('')
     }
+
+    useEffect(()=>{
+      setTimeout(()=>{
+        setPopUp(false)
+      }, 4000)
+    },[popUp])
    
     return (
       <div className="bg-[#171616] py-16 lg:py-16" id='Contact-Us'>
@@ -73,11 +90,17 @@ const ContactForm = () => {
                       onChange={(e)=>setMessage(e.target.value)}
                     />
                   </div>
-                  <button className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition transform hover:scale-105"
+                  <button className={`w-full bg-black text-white ${mailState ? 'py-[2px]' : 'py-3'} rounded-md hover:bg-gray-800 transition transform flex justify-center`}
                     onClick={handleClick}
                   >
-                    Send message
+                    {mailState ? (
+                      <img src={loadAnimation} alt="" className='h-[43px]' />
+                    ) : 'Send message'}
                   </button>
+                  {popUp && 
+                    <p className={`text-white absolute sm:right-36 ${popUpMsg ? 'text-green-500' : 'text-red-500' }`}>
+                      {popUpMsg ? 'Emial sent successfully. We will contact you soon': 'Oops somthing went wrong. Please try later'}</p>
+                  }
                 </form>
               </div>
             </div>

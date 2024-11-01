@@ -23,11 +23,11 @@ export interface ContactData {
       .from('contacts')  
       .insert([contact]);
 
-      console.log(res);
+      if(res.data) return true
+      else if(res.error) return false
+      return true
       // return data      
-    } catch(error) {
-      console.log('ent');
-      console.log(error);
+    } catch {
       return false
     }
   };
