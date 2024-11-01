@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 
 const MobileMenu = ({ isOpen = true, onClose = () => {} }) => (
   <div
-    className={`absolute inset-0 max-h-fit bg-black/85 backdrop-blur-ms transform ${
+    className={`absolute inset-0 max-h-fit bg-black/85 backdrop-blur-ms transform  sm:hidden ${
       isOpen ? "translate-x-0" : "translate-x-full"
     } transition-transform duration-300 ease-in-out z-30`}
   >
@@ -80,7 +80,7 @@ const NavBar = () => {
                   to="home"
                   smooth={true}
                   duration={600}
-                  className="text-white text-sm hover:text-gray-300 transition"
+                  className="text-white text-sm hover:text-gray-300 cursor-pointer transition"
                 >
                   Home
                 </Link>
@@ -88,7 +88,7 @@ const NavBar = () => {
                   to="services"
                   smooth={true}
                   duration={400}
-                  className="text-white text-sm hover:text-gray-300 transition"
+                  className="text-white text-sm hover:text-gray-300 cursor-pointer transition"
                 >
                   Service
                 </Link>
@@ -96,7 +96,7 @@ const NavBar = () => {
                   to="projects"
                   smooth={true}
                   duration={600}
-                  className="text-white text-sm hover:text-gray-300 transition"
+                  className="text-white text-sm hover:text-gray-300 cursor-pointer transition"
                 >
                   Projects
                 </Link>
@@ -104,7 +104,7 @@ const NavBar = () => {
                   to="home"
                   smooth={true}
                   duration={600}
-                  className="text-white text-sm hover:text-gray-300 transition"
+                  className="text-white text-sm hover:text-gray-300 cursor-pointer transition"
                 >
                   About us
                 </Link>
@@ -119,7 +119,7 @@ const NavBar = () => {
               to="contact"
               smooth={true}
               duration={1000}
-              className="bg-black text-white text-lg font-bold px-4 py-2 rounded-3xl hover:bg-gray-800 transition hidden sm:block"
+              className=" text-white text-xl font-semibold  px-4 py-2 rounded-xl hover:bg-white/90 hover:text-black transition-all hidden sm:block cursor-pointer"
             >
               Contact Us
             </Link>
