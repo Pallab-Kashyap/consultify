@@ -98,7 +98,7 @@ const ContactForm = () => {
                     ) : 'Send message'}
                   </button>
                   {popUp && 
-                    <p className={`text-white absolute sm:right-36 ${popUpMsg ? 'text-green-500' : 'text-red-500' }`}>
+                    <p className={`absolute sm:right-36 ${popUpMsg ? 'text-green-500' : 'text-red-500' }`}>
                       {popUpMsg ? 'Emial sent successfully. We will contact you soon': 'Oops somthing went wrong. Please try later'}</p>
                   }
                 </form>
