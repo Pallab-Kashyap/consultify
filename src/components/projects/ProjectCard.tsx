@@ -17,7 +17,7 @@ const ProjectCard = ({
         target="_blank"
         className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-700 transition w-fit absolute bottom-0"
       >
-        {link}
+        Visit Site
       </a>
     </div>
     <div>
