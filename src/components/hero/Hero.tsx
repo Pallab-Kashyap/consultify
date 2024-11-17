@@ -7,7 +7,7 @@ const Hero = () => (
         <div className="flex flex-col lg:flex-row items-center justify-between lg:gap-32">
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl lg:w-[14ch] font-bold mb-6 leading-tight">
-              Consultify: Your go-to consultant agency for web
+              WebHelp : Your go-to consultant agency for web
             </h1>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
               Consultify offers top-notch services in web development, digital
