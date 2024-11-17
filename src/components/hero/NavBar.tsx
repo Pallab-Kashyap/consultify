@@ -4,11 +4,11 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-scroll";
 
 const MobileMenu = ({ isOpen = true, onClose = () => {} }) => (
-  <div
-    className={`absolute inset-0 max-h-fit bg-black/85 backdrop-blur-ms transform  sm:hidden ${
-      isOpen ? "translate-x-0" : "translate-x-full"
-    } transition-transform duration-300 ease-in-out z-30`}
-  >
+          <div
+            className={` fixed inset-0 max-h-fit bg-black/85 backdrop-blur-ms transform  sm:hidden ${
+              isOpen ? "translate-x-0" : "translate-x-full"
+            } transition-transform duration-300 ease-in-out z-30 `}
+          >
     <div className="flex justify-end p-4">
       <button onClick={onClose} className="text-white">
         <X size={24} />
@@ -66,7 +66,7 @@ const NavBar = () => {
 
   return (
     // <nav className="sticky top-0 z-40 bg-[#161616]/80 backdrop-blur-sm">
-    <nav className="bg-[#161616]">
+    <nav className="bg-[#161616] overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex items-center justify-between h-16 sm:h-24">
           <div className="flex items-center gap-6">
